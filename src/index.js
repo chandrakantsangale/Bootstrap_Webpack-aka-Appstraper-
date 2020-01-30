@@ -1,1 +1,1 @@
-alert("Webpack Working Press Ok");
+import "./main.scss";
