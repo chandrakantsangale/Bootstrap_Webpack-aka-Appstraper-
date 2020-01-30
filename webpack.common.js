@@ -1,23 +1,13 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/template.html"
-    })
-  ],
+  entry: {
+    main: "./src/index.js",
+    vendor: "./src/vendor.js"
+  },
+
   module: {
     rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          "style-loader", //insert styles into dom
-          "css-loader", //convert css to common js
-          "sass-loader" //convert sass to css
-        ]
-      },
       {
         test: /\.html$/,
         use: ["html-loader"]
@@ -27,7 +17,7 @@ module.exports = {
         use: {
           loader: "file-loader",
           options: {
-            esModule: false, //esModule option had enabled a default value of true
+            esModule: false, //esModule option had enabled a default value of true in clean-webpack-plugin
             name: "[name].[hash].[ext]",
             outputPath: "imgs"
           }
