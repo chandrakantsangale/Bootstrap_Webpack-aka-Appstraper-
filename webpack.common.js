@@ -17,6 +17,21 @@ module.exports = {
           "css-loader", //convert css to common js
           "sass-loader" //convert sass to css
         ]
+      },
+      {
+        test: /\.html$/,
+        use: ["html-loader"]
+      },
+      {
+        test: /\.(svg|png|jpg|gif)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            esModule: false, //esModule option had enabled a default value of true
+            name: "[name].[hash].[ext]",
+            outputPath: "imgs"
+          }
+        }
       }
     ]
   }
