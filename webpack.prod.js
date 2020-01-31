@@ -16,17 +16,38 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
     new CleanWebpackPlugin(),
     // Generates default index.html
-    new HtmlWebpackPlugin({}),
+    new HtmlWebpackPlugin({
+      template: "src/index.html"
+    }),
     // Also generate a template.html
     new HtmlWebpackPlugin({
       filename: "template.html",
       template: "src/template.html"
     }),
-    // Also generate a template2.html with production attributes
+    //Examples Folder
+    // Also generate a allcomponents.html with production attributes
     new HtmlWebpackPlugin({
-      filename: "template2.html",
-
-      template: "./src/template2.html",
+      filename: "allcomponents.html",
+      template: "./src/examples/allcomponents.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "blog.html",
+      template: "./src/examples/blog.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    //Docs Folder
+    new HtmlWebpackPlugin({
+      filename: "introduction.html",
+      template: "./src/docs/introduction.html",
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
