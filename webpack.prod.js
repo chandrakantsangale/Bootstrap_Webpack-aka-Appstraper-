@@ -15,8 +15,18 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
     new CleanWebpackPlugin(),
+    // Generates default index.html
+    new HtmlWebpackPlugin({}),
+    // Also generate a template.html
     new HtmlWebpackPlugin({
-      template: "./src/template.html",
+      filename: "template.html",
+      template: "src/template.html"
+    }),
+    // Also generate a template2.html with production attributes
+    new HtmlWebpackPlugin({
+      filename: "template2.html",
+
+      template: "./src/template2.html",
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
