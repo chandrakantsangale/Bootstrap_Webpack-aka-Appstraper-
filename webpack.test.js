@@ -9,15 +9,36 @@ module.exports = merge(common, {
   mode: "production",
   output: {
     filename: "[name].[contentHash].bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "examples")
   },
 
   plugins: [
     new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
     new CleanWebpackPlugin(),
-    // Generates default index.html
+
+    //Examples Folder
+    // Also generate a allcomponents.html with production attributes
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      filename: "allcomponents.html",
+      template: "./src/examples/allcomponents.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "blog.html",
+      template: "./src/examples/blog.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "product.html",
+      template: "./src/examples/product.html",
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
