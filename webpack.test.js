@@ -28,8 +28,53 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      filename: "album.html",
+      template: "./src/examples/album.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
       filename: "blog.html",
       template: "./src/examples/blog.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "carousel.html",
+      template: "./src/examples/carousel.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "checkout.html",
+      template: "./src/examples/checkout.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "dashboard.html",
+      template: "./src/examples/dashboard.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "pricing.html",
+      template: "./src/examples/pricing.html",
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
@@ -44,18 +89,16 @@ module.exports = merge(common, {
         collapseWhitespace: true,
         removeComments: true
       }
+    }),
+    new HtmlWebpackPlugin({
+      filename: "stater.html",
+      template: "./src/examples/starter.html",
+      minify: {
+        removeAttributeQuotes: true,
+        collapseWhitespace: true,
+        removeComments: true
+      }
     })
-    // for next page add here
-    // ,
-    // new HtmlWebpackPlugin({
-    //   filename: "product.html",
-    //   template: "./src/examples/starter.html",
-    //   minify: {
-    //     removeAttributeQuotes: true,
-    //     collapseWhitespace: true,
-    //     removeComments: true
-    //   }
-    // })
   ],
   module: {
     rules: [
