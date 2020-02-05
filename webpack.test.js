@@ -45,6 +45,17 @@ module.exports = merge(common, {
         removeComments: true
       }
     })
+    // for next page add here
+    // ,
+    // new HtmlWebpackPlugin({
+    //   filename: "product.html",
+    //   template: "./src/examples/starter.html",
+    //   minify: {
+    //     removeAttributeQuotes: true,
+    //     collapseWhitespace: true,
+    //     removeComments: true
+    //   }
+    // })
   ],
   module: {
     rules: [

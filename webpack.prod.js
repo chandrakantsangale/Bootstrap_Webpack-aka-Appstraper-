@@ -24,6 +24,16 @@ module.exports = merge(common, {
         removeComments: true
       }
     })
+    // for next page add code here
+    // ,
+    // new HtmlWebpackPlugin({
+    //   template: "src/stater.html",
+    //   minify: {
+    //     removeAttributeQuotes: true,
+    //     collapseWhitespace: true,
+    //     removeComments: true
+    //   }
+    // })
   ],
   module: {
     rules: [

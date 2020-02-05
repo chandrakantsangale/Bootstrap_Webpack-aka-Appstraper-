@@ -13,11 +13,12 @@ module.exports = merge(common, {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html"
-    }),
-    new HtmlWebpackPlugin({
-      filename: "starter.html",
-      template: "src/starter.html"
     })
+    // , // add this comma also
+    // new HtmlWebpackPlugin({
+    //   filename: "page_name.html",
+    //   template: "src/page_name.html"
+    // })
   ],
   module: {
     rules: [

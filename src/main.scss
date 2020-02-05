@@ -1,2 +1,16 @@
-$primary: green;
+// adding a custom font
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap");
+
+//webstrap custom css
+@import "./webstrap.scss";
+
+//bootstrap default css
 @import "~bootstrap/scss/bootstrap";
+
+//style css for custom simple css
+@import "./style.css";
+
+//styles css for Examples
+@import "./examples/album.css";
+@import "./examples/blog.css";
+@import "./examples/product.css";
