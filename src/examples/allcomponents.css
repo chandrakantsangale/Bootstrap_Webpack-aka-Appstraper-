@@ -1,0 +1,119 @@
+/* Global */
+.title {
+  margin-top: 54px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Button */
+.btn-block:nth-child(2n) {
+  margin-bottom: 3rem;
+}
+.component-btn button:not(.btn-block) {
+  margin-bottom: 3rem;
+}
+
+/* Card */
+.card-custom .card {
+  max-width: 18rem;
+  margin: 1rem;
+}
+
+.card-custom {
+  margin-bottom: 5rem;
+}
+
+.component_card_deck {
+  margin-bottom: 5rem;
+}
+
+.component_card_column {
+  margin-bottom: 5rem;
+}
+
+/* Carousel */
+.component-carousel {
+  margin-bottom: 5rem;
+}
+
+/* Dropdown */
+.component-dropdown .dropdown,
+.dropright,
+.dropleft,
+.dropup {
+  margin-bottom: 3rem;
+}
+
+.component-dropdown {
+  margin-bottom: 5rem;
+}
+
+/* Forms */
+.component-form,
+.component-form-group,
+.component-form-serverside {
+  margin-bottom: 5rem;
+}
+
+/* Jumbotron */
+.component-jumbotron {
+  margin-bottom: 5rem;
+}
+
+/* List-Group  */
+.list-group {
+  margin-bottom: 5rem;
+}
+
+.component-list-behavior {
+  margin-bottom: 5rem;
+}
+
+/* Alert  */
+.component-alert {
+  margin-bottom: 5rem;
+}
+
+/* Badge  */
+.component-badge {
+  margin-bottom: 5rem;
+}
+
+/* Breadcrumb  */
+.component-breadcrumb {
+  margin-bottom: 5rem;
+}
+
+/* Navbar  */
+.component-navbar {
+  margin-bottom: 5rem;
+}
+.navbar {
+  margin-bottom: 3rem;
+}
+
+/* Progress  */
+.component-progress {
+  margin-bottom: 3rem;
+}
+
+.progress {
+  margin-bottom: 0.5rem;
+}
+
+/* Pagination  */
+.component-pagination {
+  margin-bottom: 5rem;
+}
+
+/* Spinner  */
+.component-spinner {
+  margin-bottom: 5rem;
+}

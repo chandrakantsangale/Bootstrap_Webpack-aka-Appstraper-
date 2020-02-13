@@ -17,52 +17,23 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(),
     // Generates default index.html
     new HtmlWebpackPlugin({
-      template: "src/index.html"
-    }),
-    // Also generate a template.html
-    new HtmlWebpackPlugin({
-      filename: "template.html",
-      template: "src/template.html"
-    }),
-    //Examples Folder
-    // Also generate a allcomponents.html with production attributes
-    new HtmlWebpackPlugin({
-      filename: "allcomponents.html",
-      template: "./src/examples/allcomponents.html",
-      minify: {
-        removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        removeComments: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      filename: "blog.html",
-      template: "./src/examples/blog.html",
-      minify: {
-        removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        removeComments: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      filename: "product.html",
-      template: "./src/examples/product.html",
-      minify: {
-        removeAttributeQuotes: true,
-        collapseWhitespace: true,
-        removeComments: true
-      }
-    }),
-    //Docs Folder
-    new HtmlWebpackPlugin({
-      filename: "introduction.html",
-      template: "./src/docs/introduction.html",
+      template: "src/index.html",
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
         removeComments: true
       }
     })
+    // for next page add code here
+    // ,
+    // new HtmlWebpackPlugin({
+    //   template: "src/stater.html",
+    //   minify: {
+    //     removeAttributeQuotes: true,
+    //     collapseWhitespace: true,
+    //     removeComments: true
+    //   }
+    // })
   ],
   module: {
     rules: [
