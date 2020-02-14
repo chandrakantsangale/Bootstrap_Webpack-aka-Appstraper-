@@ -6,19 +6,39 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
+  entry: {
+    allcomponents: "./src/examples/css/allcomponents.css",
+    checkout: [
+      "./src/examples/css/checkout.css",
+      "./src/examples/js/checkout.js"
+    ],
+    dashboard: [
+      "./src/examples/css/dashboard.css",
+      "./src/examples/js/dashboard.js"
+    ],
+    album: "./src/examples/css/album.css",
+    blog: "./src/examples/css/blog.css",
+    carousel: "./src/examples/css/carousel.css",
+    pricing: "./src/examples/css/pricing.css",
+    product: "./src/examples/css/product.css",
+    starter: "./src/examples/css/starter.css"
+  },
   mode: "production",
   output: {
-    filename: "[name].[contentHash].bundle.js",
+    filename: "js/[name].[hash].js",
     path: path.resolve(__dirname, "examples")
   },
 
   plugins: [
-    new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[hash].css"
+    }),
     new CleanWebpackPlugin(),
 
-    //Examples Folder
-    // Also generate a allcomponents.html with production attributes
+    // Examples Folder
+    // Generate allcomponents and examples with production attributes
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor", "allcomponents"],
       filename: "allcomponents.html",
       template: "./src/examples/allcomponents.html",
       minify: {
@@ -28,6 +48,7 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor", "album"],
       filename: "album.html",
       template: "./src/examples/album.html",
       minify: {
@@ -37,6 +58,7 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor"],
       filename: "blog.html",
       template: "./src/examples/blog.html",
       minify: {
@@ -46,6 +68,7 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor"],
       filename: "carousel.html",
       template: "./src/examples/carousel.html",
       minify: {
@@ -55,6 +78,7 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor", "checkout"],
       filename: "checkout.html",
       template: "./src/examples/checkout.html",
       minify: {
@@ -64,6 +88,7 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor"],
       filename: "dashboard.html",
       template: "./src/examples/dashboard.html",
       minify: {
@@ -73,6 +98,7 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor"],
       filename: "pricing.html",
       template: "./src/examples/pricing.html",
       minify: {
@@ -82,6 +108,7 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor"],
       filename: "product.html",
       template: "./src/examples/product.html",
       minify: {
@@ -91,6 +118,7 @@ module.exports = merge(common, {
       }
     }),
     new HtmlWebpackPlugin({
+      chunks: ["main", "vendor"],
       filename: "stater.html",
       template: "./src/examples/starter.html",
       minify: {
@@ -103,7 +131,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader, //3.insert css styles into .css file
           "css-loader", //2.convert css to common js

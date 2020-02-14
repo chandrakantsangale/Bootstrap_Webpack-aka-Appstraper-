@@ -6,18 +6,23 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
+  entry: {
+    app: ["./src/site/css/app.css", "./src/site/js/app.js"]
+  },
   mode: "production",
+  //devtool: "none", // uncomment code for more simplify the webpack code for development only
   output: {
-    filename: "[name].[contentHash].bundle.js",
+    filename: "js/[name].[hash].js",
     path: path.resolve(__dirname, "dist")
   },
-
   plugins: [
-    new MiniCssExtractPlugin({ filename: "[name].[contentHash].css" }),
+    new MiniCssExtractPlugin({
+      filename: "css/[name].[hash].css"
+    }),
     new CleanWebpackPlugin(),
-    // Generates default index.html
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: "src/site/index.html",
+      chunks: ["main", "app"],
       minify: {
         removeAttributeQuotes: true,
         collapseWhitespace: true,
@@ -27,7 +32,8 @@ module.exports = merge(common, {
     // for next page add code here
     // ,
     // new HtmlWebpackPlugin({
-    //   template: "src/stater.html",
+    //   template: "src/site/starter.html",
+    //   chunks: ["main", "starter"],
     //   minify: {
     //     removeAttributeQuotes: true,
     //     collapseWhitespace: true,
@@ -38,7 +44,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader, //3.insert css styles into .css file
           "css-loader", //2.convert css to common js

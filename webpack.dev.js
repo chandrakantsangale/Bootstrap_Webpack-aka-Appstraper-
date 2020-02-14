@@ -5,16 +5,15 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "development",
-  //devtool: "none", //remove comment for more simplify the webpack code for dev
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist")
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: "./src/site/index.html"
     })
-    // , // add this comma also
+    // , // uncomment this code to add next html to development
     // new HtmlWebpackPlugin({
     //   filename: "page_name.html",
     //   template: "src/page_name.html"

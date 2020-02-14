@@ -2,8 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: "./src/index.js",
-    vendor: "./src/vendor.js"
+    main: ["./src/index.js", "./src/vendor.js"]
   },
 
   module: {
@@ -19,7 +18,7 @@ module.exports = {
           options: {
             esModule: false, //esModule option had enabled a default value of true in clean-webpack-plugin
             name: "[name].[hash].[ext]",
-            outputPath: "imgs"
+            outputPath: "images"
           }
         }
       }
